@@ -13,8 +13,8 @@ def create_app(test_config=None):
 
     if test_config is None:
         app.config.from_mapping(
-            SECRET_KEY=os.environ.get("SECRET_KEY"),
-            SQLALCHEMY_DATABASE_URI=os.environ.get("SQLALCHEMY_DB_URI"),
+            SECRET_KEY="jhdskhsduiuy8fsdf98sd",
+            SQLALCHEMY_DATABASE_URI='postgres://ybtkjilpmhzqji:8051c5d34ec89e45f892548d1375d8a26616875a1b8773542a481abaa2dbddab@ec2-3-222-74-92.compute-1.amazonaws.com:5432/d4i3l5tk1f5bvl',
             SQLALCHEMY_TRACK_MODIFICATIONS=False,
         )
     else:
