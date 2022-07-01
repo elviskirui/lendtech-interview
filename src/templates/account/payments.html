@@ -1,5 +1,5 @@
 {% extends "layout/base.html" %}
-{% block title %} Dashboard {% endblock title %}
+{% block title %} Payment history {% endblock title %}
 
 {% block content %}
     <section class="innerpage__head mb-0">
@@ -11,39 +11,71 @@
     <section class="section section__contact pt-4">
         <div class="container">
 
-                   <form class="form-inline">
+                   <form class="form-inline" method="get" action="{{ url_for('account.filter_payments')}}">
 
                       <div class="form-group mx-sm-3 mb-2">
                         <label for="from" class="sr-only">From</label>
-                        <input type="date" class="form-control" placeholder="Date from">
+                        <input type="date" name="date_from" class="form-control" value="{{ request.args.get('date_from')}}" placeholder="Date from">
                       </div>
                        <div class="form-group mx-sm-3 mb-2">
                         <label for="to" class="sr-only">To</label>
-                        <input type="date" class="form-control" placeholder="Date to">
+                        <input type="date" name="date_to" class="form-control" value="{{ request.args.get('date_to')}}" placeholder="Date to">
                       </div>
                       <button type="submit" class="btn btn-primary btn-sm mb-2">Filter <i class="fa fa-search"></i> </button>
                     </form>
 
                 <div class="row">
 
-                        <h4 class="">Recent Transactions</h4>
-
+                    {% if request.args.get('date_from') %}
+                        <h4 class="">Payments from {{ request.args.get('date_from') }} to {{ request.args.get('date_to')}}</h4>
+                    {% else %}
+                        <h4 class="">Payment history</h4>
+                    {% endif %}
                     <table id="basic-datatable" class="table">
                         <thead>
                         <tr>
-                            <th>From/To</th>
+                            <th>Account name</th>
+                            <th>Account Number</th>
                             <th>Amount</th>
-                            <th>Account</th>
                             <th>Date</th>
-                            <th>Action</th>
                         </tr>
                         </thead>
+                        <tbody>
+                            {% for payment in payments %}
+                             <tr>
+                                <td>
+                                    {% if payment.type == 'RECEIVE' %}
+                                        <span style="color: #419355">From:</span>
+                                    {% else %}
+                                        <span style="color: #e09b47">To:</span>
+                                    {% endif %}
+                                    {{ payment.name }}
+                                </td>
+                                 <td>
+                                    {{ payment.account_type }} :
+                                    {% if payment.account_type == 'BANK' %}
+                                        <span>Bank : {{ payment.account_number }}</span>
+                                    {% else %}
+                                        <span>Phone: +{{ payment.account_number }}</span>
+                                    {% endif %}
+                                    </td>
+                                <td>
+                                    {% if payment.type == 'RECEIVE' %}
+                                        <span style="color: #419355">+ {{ payment.amount }} {{ payment.currency }}</span>
+                                    {% else %}
+                                        <span style="color: #e09b47">- {{ payment.amount }} {{ payment.currency }}</span>
+                                    {% endif %}
+                                </td>
 
+                                <td>{{ payment.created_at}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
 
                         <tbody>
                         </tbody>
-                    </table>
 
+                    </table>
                 </div>
 
             </div>

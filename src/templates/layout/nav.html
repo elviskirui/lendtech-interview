@@ -17,21 +17,26 @@
         <!-- End Header menu for mobile -->
         <ul class="menu">
             <li class="active"><a href="{{ url_for('account.dashboard')}}">Home</a></li>
+
+            {% if current_user.is_authenticated %}
             <li><a href="{{ url_for('account.payments') }}">Payment history</a></li>
 
             <li class="dropdown">
-                <a style="color: blue" href="#">Elvis</a>
+                <a style="color: blue" href="#">{{ current_user.first_name+" "+current_user.last_name }}</a>
                 <ul class="dropdown-menu">
-                    <li><a href="#"><i class="fa fa-home"></i> Dashboard</a></li>
-                    <li><a href="#"><i class="fa fa-plus"></i> Invest Now  </a></li>
-                    <li><a href="#"><i class="fa fa-power-off"></i> Logout  </a></li>
+                    <li><a href="{{ url_for('auth.logout')}}"><i class="fa fa-power-off"></i> Logout  </a></li>
                 </ul>
             </li>
+            {% endif %}
 
         </ul>
         </ul>
         <ul class="attributes">
-            <li><a href="#" class="btn btn-primary btn-rounded btn-xs btn-header">Register</a></li>
-            <li><a href="#" class="btn btn-success btn-rounded btn-xs btn-header ml-1">Login</a></li>
+            {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('auth.logout') }}" class="btn btn-outline-warning btn-rounded btn-xs btn-header ml-1">Logout <i class="fa fa-power-off"></i> </a></li>
+            {% else %}
+                <li><a href="{{ url_for('auth.register') }}" class="btn btn-primary btn-rounded btn-xs btn-header">Register</a></li>
+                <li><a href="{{ url_for('auth.login') }}" class="btn btn-success btn-rounded btn-xs btn-header ml-1">Login</a></li>
+            {% endif %}
         </ul>
     </nav>

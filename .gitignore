@@ -1,4 +1,25 @@
-export FLASK_ENV=development
-export FLASK_APP=src
-export SQLALCHEMY_DB_URI=mysql://root:@localhost/bookmark_api
-export JWT_SECRET='JWT_SECRET_KEY
+.DS_Store
+.env
+.flaskenv
+*.pyc
+*.pyo
+env/
+venv/
+.venv/
+env*
+dist/
+build/
+*.egg
+*.egg-info/
+.tox/
+.cache/
+.pytest_cache/
+.idea/
+docs/_build/
+.vscode
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+*,cover

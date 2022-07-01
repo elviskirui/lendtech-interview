@@ -1,10 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "layout/base.html" %}
+{% block title %}Login {% endblock title %}
+{% block content %}
+ <style>
+        .section__contact:after {
+            width: 0 !important;
+        }
+    </style>
+    <section class="innerpage__head mb-0">
+<!--      -->
+    </section>
+    <!-- End breadcrumb -->
 
-</body>
-</html>
+    <!-- Start Section -->
+    <section class="section section__contact p-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3  js-match-height">
+                    <div class="contact__main">
+                        <h2 class="section__heading">Log In</h2>
+                       {% include "info.html" %}
+                        <form class="row" id="registerForm" method="post" action="{{ url_for('auth.login') }}">
+
+                            <div class="col-md-12 form-group">
+                                <label for="phone">Phone number</label>
+                                <input type="number" class="form-control" id="phone" aria-describedby="phone"
+                                       value="254"
+                                       placeholder="Enter your phone number"
+                                       name="phone"
+                                >
+
+                            </div>
+
+                            <div class="col-md-12 form-group">
+                                <label for="name">Password</label>
+                                <input type="password" class="form-control" name="password" id="name" name="password" placeholder="Password">
+
+                            </div>
+                            <div class="col-lg-6">
+                                <a class="text-right" href="#">Forgot password?</a>
+                            </div>
+                            <div class="col-lg-6">
+                                <a class="text-right" href="#">Register here</a>
+                            </div>
+
+                            <div class="col-md-12 form-action">
+                                <button type="submit" class="btn btn-primary btn-rounded">Login &nbsp;<i class="fa fa-arrow-right"></i> </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Section -->
+
+    <!-- Start Section -->
+
+{% endblock content %}
