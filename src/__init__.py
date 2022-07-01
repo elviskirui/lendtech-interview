@@ -38,13 +38,13 @@ def create_app(test_config=None):
 
     # Route to create random data for the transactions and wallets
     # This has not been optimized to check on the wallet balance and risks having negative balance
-    @app.route('/generate_random_data')
-    def generate_data():
-        return create_sample_data()
-
-    @app.route('/create_all')
-    def generate_data():
-        return db.create_all()
+    # @app.route('/generate_random_data')
+    # def generate_data():
+    #     return create_sample_data()
+    #
+    # @app.route('/create_all')
+    # def generate_data():
+    #     return db.create_all()
 
     return app
 
