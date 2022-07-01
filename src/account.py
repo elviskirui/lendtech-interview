@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request
 from flask_login import login_required, current_user
 from src.database import Wallet, db, Payment
 
-account = Blueprint('account',__name__,url_prefix='')
+account = Blueprint('account',__name__,url_prefix='/')
 
 # TODO Add pagination to all pages
 
