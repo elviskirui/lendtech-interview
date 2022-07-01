@@ -42,5 +42,9 @@ def create_app(test_config=None):
     def generate_data():
         return create_sample_data()
 
+    @app.route('/create_all')
+    def generate_data():
+        return db.create_all()
+
     return app
 
