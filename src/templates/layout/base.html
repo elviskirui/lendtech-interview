@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>{%block title %}{% endblock  title %} | Lendtech</title>
+
+    <meta charset="utf-8">
+    <meta name="keywords" content="Lendtech Interview technical question">
+    <meta name="description" content="Lendtech Interview technical question">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="99webpage">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='build/css/countrySelect.css')}}">
+    <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='build/js/countrySelect.js') }}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <style>
+        .section__contact:after {
+            width: 0 !important;
+        }
+        .section__contact::before{
+            width: 0 !important;
+        }
+        @media {
+            .logo-image {
+                height: 30px !important;
+            }
+        }
+    </style>
+
+
+
+    <!-- Template stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.min.css') }}">
+</head>
+<body>
+
+<!-- Start Header -->
+<header class="header js-header-scroll">
+   {% include 'layout/nav.html' %}
+</header>
+<!-- End Header -->
+
+<!-- Start Masthead -->
+{% block content %}
+{% endblock content %}
+<div class="back-to-top js-back-to-top">
+    <span class="fa fa-angle-double-up back-to-top__icon"></span>
+    <span class="back-to-top__text">TOP</span>
+</div>
+<!-- End Back to top -->
+
+<!-- Start Footer -->
+<footer class="footer">
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <div class="footer__subfooter">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>© Lendtech 2022 | All Rights Reserved.</p>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <ul class="footer__subfooter-liststyle">
+                                <li><a href="#">Terms Of Service</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Help</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer -->
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{{ url_for('static',filename='js/main.min.js') }}"></script>
+
+<!-- Template custome JavaScript -->
+<script src="{{ url_for('static', filename='js/scripts.min.js') }}"></script>
+</body>
+</html>

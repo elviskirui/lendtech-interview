@@ -1,0 +1,149 @@
+{% extends "layout/base.html" %}
+{% block title %} Dashboard {% endblock title %}
+
+{% block content %}
+    <section class="innerpage__head mb-0">
+
+    </section>
+    <!-- End breadcrumb -->
+
+    <!-- Start Section -->
+    <section class="section section__contact pt-4">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <h4 class="">Welcome back Elvis</h4>
+
+<style>
+    .card {
+        background-color: #fff;
+        border-radius: 10px;
+        border: none;
+        position: relative;
+        margin-bottom: 30px;
+        box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,0.1), 0 0.9375rem 1.40625rem rgba(90,97,105,0.1), 0 0.25rem 0.53125rem rgba(90,97,105,0.12), 0 0.125rem 0.1875rem rgba(90,97,105,0.1);
+    }
+    .l-bg-cherry {
+        background: linear-gradient(to right, #493240, #f09) !important;
+        color: #fff;
+    }
+
+    .l-bg-blue-dark {
+        background: linear-gradient(to right, #373b44, #4286f4) !important;
+        color: #fff;
+    }
+
+    .l-bg-green-dark {
+        background: linear-gradient(to right, #0a504a, #38ef7d) !important;
+        color: #fff;
+    }
+
+    .l-bg-orange-dark {
+        background: linear-gradient(to right, #a86008, #ffba56) !important;
+        color: #fff;
+    }
+
+    .card .card-statistic-3 .card-icon-large .fas, .card .card-statistic-3 .card-icon-large .far, .card .card-statistic-3 .card-icon-large .fab, .card .card-statistic-3 .card-icon-large .fal {
+        font-size: 110px;
+    }
+
+    .card .card-statistic-3 .card-icon {
+        text-align: center;
+        line-height: 50px;
+        margin-left: 15px;
+        color: #000;
+        position: absolute;
+        right: -5px;
+        top: 20px;
+        opacity: 0.1;
+    }
+
+    .l-bg-cyan {
+        background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
+        color: #fff;
+    }
+
+    .l-bg-green {
+        background: linear-gradient(135deg, #23bdb8 0%, #43e794 100%) !important;
+        color: #fff;
+    }
+
+    .l-bg-orange {
+        background: linear-gradient(to right, #f9900e, #ffba56) !important;
+        color: #fff;
+    }
+
+    .l-bg-cyan {
+        background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
+        color: #fff;
+    }
+
+</style>
+
+                    <div class="row ">
+                        <div class="col-md-6 offset-3">
+                            <div class="card l-bg-cherry">
+                                <div class="card-statistic-3 p-4">
+                                    <div class="card-icon card-icon-large"><i class="fas fa-shopping-cart"></i></div>
+                                    <div class="mb-4">
+                                        <h5 class="card-title mb-0">Loan balance</h5>
+                                    </div>
+                                    <div class="row align-items-center mb-2 d-flex">
+                                        <div class="col-8">
+                                            <h2 class="d-flex align-items-center mb-0">
+                                                Ksh 20,000
+                                            </h2>
+                                        </div>
+                                        <div class="col-4 text-right">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row center">
+                          <div class="col-md-6 offset-3">
+                            <a class="btn btn-sm btn-outline-info" href="{{ url_for('account.payments') }}">
+                                <i class="fa fa-check-circle"></i> Payments
+                            </a>
+                            <a class="btn btn-sm btn-outline-success" href="#">
+                                <i class="fa fa-list"></i> Loans
+                            </a>
+                             <a class="btn btn-sm btn-outline-warning" href="#">
+                                <i class="fa fa-dollar"></i> Pay Loan
+                            </a>
+                          </div>
+
+                    </div>
+                </div>
+
+                </div>
+                <div class="row">
+
+                        <h4 class="">Recent Transactions</h4>
+
+                    <table id="basic-datatable" class="table">
+                        <thead>
+                        <tr>
+                            <th>From/To</th>
+                            <th>Amount</th>
+                            <th>Account</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+
+
+                        <tbody>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+{% endblock content%}

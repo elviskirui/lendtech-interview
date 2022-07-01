@@ -1,0 +1,4 @@
+export FLASK_ENV=development
+export FLASK_APP=src
+export SQLALCHEMY_DB_URI=mysql://root:@localhost/bookmark_api
+export JWT_SECRET='JWT_SECRET_KEY
