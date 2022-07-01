@@ -41,4 +41,6 @@ def create_app(test_config=None):
     @app.route('/generate_random_data')
     def generate_data():
         return create_sample_data()
+
     return app
+

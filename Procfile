@@ -1,2 +1,2 @@
-web: gunicorn app:src
+web: gunicorn src.runner:application
 
